@@ -1,22 +1,33 @@
-import gsap from 'gsap';
-import { ScrollTrigger, SplitText } from 'gsap/all';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import { useRef } from 'react';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+import {
+  GsapFrom,
+  GsapFromTo,
+  GsapScrollTrigger,
+  GsapStagger,
+  GsapText,
+  GsapTimeline,
+  GsapTo,
+  Home,
+} from "./pages";
 
 const App = () => {
-  
-
   return (
-    <main>
-      <Navbar />
-      <Hero />
-      <div className='h-dvh bg-black'/>
-     
-    </main>
-  )
-}
+    <div className="bg-black min-h-screen w-full">
+      <Router>
+        <Routes>
+          <Route path="/gsapto" element={<GsapTo />} />
+          <Route path="/gsapfrom" element={<GsapFrom />} />
+          <Route path="/gsapfromto" element={<GsapFromTo />} />
+          <Route path="/gsaptimeline" element={<GsapTimeline />} />
+          <Route path="/gsapstagger" element={<GsapStagger />} />
+          <Route path="/gsapscrolltrigger" element={<GsapScrollTrigger />} />
+          <Route path="/gsaptext" element={<GsapText />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
+    </div>
+  );
+};
 
-export default App
+export default App;
