@@ -352,6 +352,9 @@ body {
         #f-right-leaf {
             @apply absolute top-0 right-0 pointer-events-none hidden lg:block;
         }
+        #f-drinks {
+            @apply absolute bottom-0 right-0 pointer-events-none hidden lg:block;
+        }
 
         .content {
             @apply container mx-auto lg:py-14 2xl:py-32 py-16 flex flex-col justify-between gap-10 min-h-dvh;
